@@ -1,0 +1,26 @@
+reg_dstE = [
+	icode == IRMOVQ && rB == 0 : REG_RAX;
+	icode == IRMOVQ && rB == 1 : REG_RCX;
+	icode == IRMOVQ && rB == 2 : REG_RDX;
+	icode == IRMOVQ && rB == 3 : REG_RBX;
+	icode == IRMOVQ && rB == 4 : REG_RSP;
+	icode == IRMOVQ && rB == 5 : REG_RBP;
+	icode == IRMOVQ && rB == 6 : REG_RSI;
+	icode == IRMOVQ && rB == 7 : REG_RDI;
+	icode == IRMOVQ && rB == 8 : REG_R8;
+	icode == IRMOVQ && rB == 9 : REG_R9;
+	icode == IRMOVQ && rB == 10 : REG_R10;
+	icode == IRMOVQ && rB == 11 : REG_R11;
+	icode == IRMOVQ && rB == 12 : REG_R12;
+	icode == IRMOVQ && rB == 13 : REG_R13;
+	icode == IRMOVQ && rB == 14 : REG_R14;
+];
+
+reg_inputE = [
+	icode == IRMOVQ : valC;
+];
+
+reg_srcA = [
+	icode == RRMOVQ : rA;
+	1 : REG_NONE;
+];
