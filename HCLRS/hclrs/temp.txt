@@ -1,0 +1,294 @@
++------------------- between cycles    0 and    1 ----------------------+
+| RAX:                0   RCX:                0   RDX:                0 |
+| RBX:                0   RSP:                0   RBP:                0 |
+| RSI:                0   RDI:                0   R8:                 0 |
+| R9:                 0   R10:                0   R11:                0 |
+| R12:                0   R13:                0   R14:                0 |
+| register pP(N) { pc=0000000000000000 predPC=0000000000000000 }        |
+| register fD(N) { icode=1 ifun=0 valC=0000000000000000                 |
+|  valP=0000000000000000 rA=f rB=f Stat=1 }                             |
+| register dE(N) { icode=1 ifun=0 dstM=f dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000000 valP=0000000000000000    |
+|  rA=f rB=f srcA=f srcB=f Stat=1 }                                     |
+| register eM(N) { icode=1 ifun=0 dstM=f dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000000 valP=0000000000000000    |
+|  valE=0000000000000000 Cnd=0 srcA=f srcB=f Stat=1 }                   |
+| register mW(N) { icode=1 ifun=0 dstM=f dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000000 valE=0000000000000000    |
+|  valM=0000000000000000 Stat=1 }                                       |
+| register cC(N) { SF=0 ZF=1 }                                          |
+| used memory:   _0 _1 _2 _3  _4 _5 _6 _7   _8 _9 _a _b  _c _d _e _f    |
+|  0x0000000_:   30 f4 00 01  00 00 00 00   00 00 20 40  a0 4f b0 2f    |
+|  0x0000001_:   61 20 00                                               |
++-----------------------------------------------------------------------+
+pc = 0x0; loaded [30 f4 00 01 00 00 00 00 00 00 : irmovq $0x100, %rsp]
++------------------- between cycles    1 and    2 ----------------------+
+| RAX:                0   RCX:                0   RDX:                0 |
+| RBX:                0   RSP:                0   RBP:                0 |
+| RSI:                0   RDI:                0   R8:                 0 |
+| R9:                 0   R10:                0   R11:                0 |
+| R12:                0   R13:                0   R14:                0 |
+| register pP(N) { pc=0000000000000000 predPC=000000000000000a }        |
+| register fD(N) { icode=3 ifun=0 valC=0000000000000100                 |
+|  valP=000000000000000a rA=f rB=4 Stat=1 }                             |
+| register dE(N) { icode=1 ifun=0 dstM=f dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000000 valP=0000000000000000    |
+|  rA=f rB=f srcA=f srcB=f Stat=1 }                                     |
+| register eM(N) { icode=1 ifun=0 dstM=f dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000000 valP=0000000000000000    |
+|  valE=0000000000000000 Cnd=0 srcA=f srcB=f Stat=1 }                   |
+| register mW(N) { icode=1 ifun=0 dstM=f dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000000 valE=0000000000000000    |
+|  valM=0000000000000000 Stat=1 }                                       |
+| register cC(S) { SF=0 ZF=1 }                                          |
+| used memory:   _0 _1 _2 _3  _4 _5 _6 _7   _8 _9 _a _b  _c _d _e _f    |
+|  0x0000000_:   30 f4 00 01  00 00 00 00   00 00 20 40  a0 4f b0 2f    |
+|  0x0000001_:   61 20 00                                               |
++-----------------------------------------------------------------------+
+pc = 0xa; loaded [20 40 : rrmovq %rsp, %rax]
++------------------- between cycles    2 and    3 ----------------------+
+| RAX:                0   RCX:                0   RDX:                0 |
+| RBX:                0   RSP:                0   RBP:                0 |
+| RSI:                0   RDI:                0   R8:                 0 |
+| R9:                 0   R10:                0   R11:                0 |
+| R12:                0   R13:                0   R14:                0 |
+| register pP(N) { pc=0000000000000000 predPC=000000000000000c }        |
+| register fD(N) { icode=2 ifun=0 valC=0000000000000000                 |
+|  valP=000000000000000c rA=4 rB=0 Stat=1 }                             |
+| register dE(N) { icode=3 ifun=0 dstM=4 dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000100 valP=000000000000000a    |
+|  rA=f rB=4 srcA=f srcB=f Stat=1 }                                     |
+| register eM(N) { icode=1 ifun=0 dstM=f dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000000 valP=0000000000000000    |
+|  valE=0000000000000000 Cnd=0 srcA=f srcB=f Stat=1 }                   |
+| register mW(N) { icode=1 ifun=0 dstM=f dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000000 valE=0000000000000000    |
+|  valM=0000000000000000 Stat=1 }                                       |
+| register cC(S) { SF=0 ZF=1 }                                          |
+| used memory:   _0 _1 _2 _3  _4 _5 _6 _7   _8 _9 _a _b  _c _d _e _f    |
+|  0x0000000_:   30 f4 00 01  00 00 00 00   00 00 20 40  a0 4f b0 2f    |
+|  0x0000001_:   61 20 00                                               |
++-----------------------------------------------------------------------+
+pc = 0xc; loaded [a0 4f : pushq %rsp]
++------------------- between cycles    3 and    4 ----------------------+
+| RAX:                0   RCX:                0   RDX:                0 |
+| RBX:                0   RSP:                0   RBP:                0 |
+| RSI:                0   RDI:                0   R8:                 0 |
+| R9:                 0   R10:                0   R11:                0 |
+| R12:                0   R13:                0   R14:                0 |
+| register pP(N) { pc=0000000000000000 predPC=000000000000000e }        |
+| register fD(N) { icode=a ifun=0 valC=0000000000000000                 |
+|  valP=000000000000000e rA=4 rB=4 Stat=1 }                             |
+| register dE(N) { icode=2 ifun=0 dstM=0 dstE=f valA=0000000000000100   |
+|  valB=0000000000000000 valC=0000000000000000 valP=000000000000000c    |
+|  rA=4 rB=0 srcA=4 srcB=f Stat=1 }                                     |
+| register eM(N) { icode=3 ifun=0 dstM=4 dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000100 valP=000000000000000a    |
+|  valE=0000000000000100 Cnd=0 srcA=f srcB=f Stat=1 }                   |
+| register mW(N) { icode=1 ifun=0 dstM=f dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000000 valE=0000000000000000    |
+|  valM=0000000000000000 Stat=1 }                                       |
+| register cC(S) { SF=0 ZF=1 }                                          |
+| used memory:   _0 _1 _2 _3  _4 _5 _6 _7   _8 _9 _a _b  _c _d _e _f    |
+|  0x0000000_:   30 f4 00 01  00 00 00 00   00 00 20 40  a0 4f b0 2f    |
+|  0x0000001_:   61 20 00                                               |
++-----------------------------------------------------------------------+
+pc = 0xe; loaded [b0 2f : popq %rdx]
++------------------- between cycles    4 and    5 ----------------------+
+| RAX:                0   RCX:                0   RDX:                0 |
+| RBX:                0   RSP:                0   RBP:                0 |
+| RSI:                0   RDI:                0   R8:                 0 |
+| R9:                 0   R10:                0   R11:                0 |
+| R12:                0   R13:                0   R14:                0 |
+| register pP(N) { pc=0000000000000000 predPC=0000000000000010 }        |
+| register fD(N) { icode=b ifun=0 valC=0000000000000000                 |
+|  valP=0000000000000010 rA=2 rB=4 Stat=1 }                             |
+| register dE(N) { icode=a ifun=0 dstM=f dstE=4 valA=0000000000000100   |
+|  valB=0000000000000100 valC=0000000000000000 valP=000000000000000e    |
+|  rA=4 rB=4 srcA=4 srcB=4 Stat=1 }                                     |
+| register eM(N) { icode=2 ifun=0 dstM=0 dstE=f valA=0000000000000100   |
+|  valB=0000000000000000 valC=0000000000000000 valP=000000000000000c    |
+|  valE=0000000000000100 Cnd=0 srcA=4 srcB=f Stat=1 }                   |
+| register mW(N) { icode=3 ifun=0 dstM=4 dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000100 valE=0000000000000100    |
+|  valM=0000000000000000 Stat=1 }                                       |
+| register cC(S) { SF=0 ZF=1 }                                          |
+| used memory:   _0 _1 _2 _3  _4 _5 _6 _7   _8 _9 _a _b  _c _d _e _f    |
+|  0x0000000_:   30 f4 00 01  00 00 00 00   00 00 20 40  a0 4f b0 2f    |
+|  0x0000001_:   61 20 00                                               |
++-----------------------------------------------------------------------+
+pc = 0x10; loaded [61 20 : subq %rdx, %rax]
++------------------- between cycles    5 and    6 ----------------------+
+| RAX:                0   RCX:                0   RDX:                0 |
+| RBX:                0   RSP:              100   RBP:                0 |
+| RSI:                0   RDI:                0   R8:                 0 |
+| R9:                 0   R10:                0   R11:                0 |
+| R12:                0   R13:                0   R14:                0 |
+| register pP(S) { pc=0000000000000000 predPC=0000000000000010 }        |
+| register fD(N) { icode=6 ifun=1 valC=0000000000000000                 |
+|  valP=0000000000000012 rA=2 rB=0 Stat=1 }                             |
+| register dE(N) { icode=b ifun=0 dstM=2 dstE=4 valA=0000000000000000   |
+|  valB=00000000000000f8 valC=0000000000000000 valP=0000000000000010    |
+|  rA=2 rB=4 srcA=f srcB=4 Stat=1 }                                     |
+| register eM(N) { icode=a ifun=0 dstM=f dstE=4 valA=0000000000000100   |
+|  valB=0000000000000100 valC=0000000000000000 valP=000000000000000e    |
+|  valE=00000000000000f8 Cnd=0 srcA=4 srcB=4 Stat=1 }                   |
+| register mW(N) { icode=2 ifun=0 dstM=0 dstE=f valA=0000000000000100   |
+|  valB=0000000000000000 valC=0000000000000000 valE=0000000000000100    |
+|  valM=0000000000000000 Stat=1 }                                       |
+| register cC(S) { SF=0 ZF=1 }                                          |
+| used memory:   _0 _1 _2 _3  _4 _5 _6 _7   _8 _9 _a _b  _c _d _e _f    |
+|  0x0000000_:   30 f4 00 01  00 00 00 00   00 00 20 40  a0 4f b0 2f    |
+|  0x0000001_:   61 20 00                                               |
++-----------------------------------------------------------------------+
+pc = 0x10; loaded [61 20 : subq %rdx, %rax]
++------------------- between cycles    6 and    7 ----------------------+
+| RAX:              100   RCX:                0   RDX:                0 |
+| RBX:                0   RSP:              100   RBP:                0 |
+| RSI:                0   RDI:                0   R8:                 0 |
+| R9:                 0   R10:                0   R11:                0 |
+| R12:                0   R13:                0   R14:                0 |
+| register pP(N) { pc=0000000000000000 predPC=0000000000000012 }        |
+| register fD(N) { icode=6 ifun=1 valC=0000000000000000                 |
+|  valP=0000000000000012 rA=2 rB=0 Stat=1 }                             |
+| register dE(N) { icode=6 ifun=1 dstM=0 dstE=f valA=0000000000000000   |
+|  valB=0000000000000100 valC=0000000000000000 valP=0000000000000012    |
+|  rA=2 rB=0 srcA=2 srcB=0 Stat=1 }                                     |
+| register eM(N) { icode=b ifun=0 dstM=2 dstE=4 valA=0000000000000000   |
+|  valB=00000000000000f8 valC=0000000000000000 valP=0000000000000010    |
+|  valE=0000000000000100 Cnd=0 srcA=f srcB=4 Stat=1 }                   |
+| register mW(N) { icode=a ifun=0 dstM=f dstE=4 valA=0000000000000100   |
+|  valB=0000000000000100 valC=0000000000000000 valE=00000000000000f8    |
+|  valM=0000000000000000 Stat=1 }                                       |
+| register cC(S) { SF=0 ZF=1 }                                          |
+| used memory:   _0 _1 _2 _3  _4 _5 _6 _7   _8 _9 _a _b  _c _d _e _f    |
+|  0x0000000_:   30 f4 00 01  00 00 00 00   00 00 20 40  a0 4f b0 2f    |
+|  0x0000001_:   61 20 00                                               |
+|  0x000000f_:                              00 01 00 00  00 00 00 00    |
++-----------------------------------------------------------------------+
+pc = 0x12; loaded [00 : halt]
++------------------- between cycles    7 and    8 ----------------------+
+| RAX:              100   RCX:                0   RDX:                0 |
+| RBX:                0   RSP:               f8   RBP:                0 |
+| RSI:                0   RDI:                0   R8:                 0 |
+| R9:                 0   R10:                0   R11:                0 |
+| R12:                0   R13:                0   R14:                0 |
+| register pP(N) { pc=0000000000000000 predPC=0000000000000012 }        |
+| register fD(N) { icode=0 ifun=0 valC=0000000000000000                 |
+|  valP=0000000000000013 rA=f rB=f Stat=2 }                             |
+| register dE(N) { icode=6 ifun=1 dstM=0 dstE=f valA=0000000000000100   |
+|  valB=0000000000000100 valC=0000000000000000 valP=0000000000000012    |
+|  rA=2 rB=0 srcA=2 srcB=0 Stat=1 }                                     |
+| register eM(N) { icode=6 ifun=1 dstM=0 dstE=f valA=0000000000000000   |
+|  valB=0000000000000100 valC=0000000000000000 valP=0000000000000012    |
+|  valE=0000000000000100 Cnd=0 srcA=2 srcB=0 Stat=1 }                   |
+| register mW(N) { icode=b ifun=0 dstM=2 dstE=4 valA=0000000000000000   |
+|  valB=00000000000000f8 valC=0000000000000000 valE=0000000000000100    |
+|  valM=0000000000000100 Stat=1 }                                       |
+| register cC(N) { SF=0 ZF=0 }                                          |
+| used memory:   _0 _1 _2 _3  _4 _5 _6 _7   _8 _9 _a _b  _c _d _e _f    |
+|  0x0000000_:   30 f4 00 01  00 00 00 00   00 00 20 40  a0 4f b0 2f    |
+|  0x0000001_:   61 20 00                                               |
+|  0x000000f_:                              00 01 00 00  00 00 00 00    |
++-----------------------------------------------------------------------+
+pc = 0x12; loaded [00 : halt]
++------------------- between cycles    8 and    9 ----------------------+
+| RAX:              100   RCX:                0   RDX:              100 |
+| RBX:                0   RSP:              100   RBP:                0 |
+| RSI:                0   RDI:                0   R8:                 0 |
+| R9:                 0   R10:                0   R11:                0 |
+| R12:                0   R13:                0   R14:                0 |
+| register pP(N) { pc=0000000000000000 predPC=0000000000000012 }        |
+| register fD(N) { icode=0 ifun=0 valC=0000000000000000                 |
+|  valP=0000000000000013 rA=f rB=f Stat=2 }                             |
+| register dE(N) { icode=0 ifun=0 dstM=f dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000000 valP=0000000000000013    |
+|  rA=f rB=f srcA=f srcB=f Stat=2 }                                     |
+| register eM(N) { icode=6 ifun=1 dstM=0 dstE=f valA=0000000000000100   |
+|  valB=0000000000000100 valC=0000000000000000 valP=0000000000000012    |
+|  valE=0000000000000000 Cnd=0 srcA=2 srcB=0 Stat=1 }                   |
+| register mW(N) { icode=6 ifun=1 dstM=0 dstE=f valA=0000000000000000   |
+|  valB=0000000000000100 valC=0000000000000000 valE=0000000000000100    |
+|  valM=0000000000000000 Stat=1 }                                       |
+| register cC(N) { SF=0 ZF=1 }                                          |
+| used memory:   _0 _1 _2 _3  _4 _5 _6 _7   _8 _9 _a _b  _c _d _e _f    |
+|  0x0000000_:   30 f4 00 01  00 00 00 00   00 00 20 40  a0 4f b0 2f    |
+|  0x0000001_:   61 20 00                                               |
+|  0x000000f_:                              00 01 00 00  00 00 00 00    |
++-----------------------------------------------------------------------+
+pc = 0x12; loaded [00 : halt]
++------------------- between cycles    9 and   10 ----------------------+
+| RAX:              100   RCX:                0   RDX:              100 |
+| RBX:                0   RSP:              100   RBP:                0 |
+| RSI:                0   RDI:                0   R8:                 0 |
+| R9:                 0   R10:                0   R11:                0 |
+| R12:                0   R13:                0   R14:                0 |
+| register pP(N) { pc=0000000000000000 predPC=0000000000000012 }        |
+| register fD(N) { icode=0 ifun=0 valC=0000000000000000                 |
+|  valP=0000000000000013 rA=f rB=f Stat=2 }                             |
+| register dE(N) { icode=0 ifun=0 dstM=f dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000000 valP=0000000000000013    |
+|  rA=f rB=f srcA=f srcB=f Stat=2 }                                     |
+| register eM(N) { icode=0 ifun=0 dstM=f dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000000 valP=0000000000000013    |
+|  valE=0000000000000000 Cnd=0 srcA=f srcB=f Stat=2 }                   |
+| register mW(N) { icode=6 ifun=1 dstM=0 dstE=f valA=0000000000000100   |
+|  valB=0000000000000100 valC=0000000000000000 valE=0000000000000000    |
+|  valM=0000000000000000 Stat=1 }                                       |
+| register cC(S) { SF=0 ZF=1 }                                          |
+| used memory:   _0 _1 _2 _3  _4 _5 _6 _7   _8 _9 _a _b  _c _d _e _f    |
+|  0x0000000_:   30 f4 00 01  00 00 00 00   00 00 20 40  a0 4f b0 2f    |
+|  0x0000001_:   61 20 00                                               |
+|  0x000000f_:                              00 01 00 00  00 00 00 00    |
++-----------------------------------------------------------------------+
+pc = 0x12; loaded [00 : halt]
++------------------- between cycles   10 and   11 ----------------------+
+| RAX:                0   RCX:                0   RDX:              100 |
+| RBX:                0   RSP:              100   RBP:                0 |
+| RSI:                0   RDI:                0   R8:                 0 |
+| R9:                 0   R10:                0   R11:                0 |
+| R12:                0   R13:                0   R14:                0 |
+| register pP(N) { pc=0000000000000000 predPC=0000000000000012 }        |
+| register fD(N) { icode=0 ifun=0 valC=0000000000000000                 |
+|  valP=0000000000000013 rA=f rB=f Stat=2 }                             |
+| register dE(N) { icode=0 ifun=0 dstM=f dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000000 valP=0000000000000013    |
+|  rA=f rB=f srcA=f srcB=f Stat=2 }                                     |
+| register eM(N) { icode=0 ifun=0 dstM=f dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000000 valP=0000000000000013    |
+|  valE=0000000000000000 Cnd=0 srcA=f srcB=f Stat=2 }                   |
+| register mW(N) { icode=0 ifun=0 dstM=f dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000000 valE=0000000000000000    |
+|  valM=0000000000000000 Stat=2 }                                       |
+| register cC(S) { SF=0 ZF=1 }                                          |
+| used memory:   _0 _1 _2 _3  _4 _5 _6 _7   _8 _9 _a _b  _c _d _e _f    |
+|  0x0000000_:   30 f4 00 01  00 00 00 00   00 00 20 40  a0 4f b0 2f    |
+|  0x0000001_:   61 20 00                                               |
+|  0x000000f_:                              00 01 00 00  00 00 00 00    |
++-----------------------------------------------------------------------+
+pc = 0x12; loaded [00 : halt]
++----------------------- halted in state: ------------------------------+
+| RAX:                0   RCX:                0   RDX:              100 |
+| RBX:                0   RSP:              100   RBP:                0 |
+| RSI:                0   RDI:                0   R8:                 0 |
+| R9:                 0   R10:                0   R11:                0 |
+| R12:                0   R13:                0   R14:                0 |
+| register pP(N) { pc=0000000000000000 predPC=0000000000000012 }        |
+| register fD(N) { icode=0 ifun=0 valC=0000000000000000                 |
+|  valP=0000000000000013 rA=f rB=f Stat=2 }                             |
+| register dE(N) { icode=0 ifun=0 dstM=f dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000000 valP=0000000000000013    |
+|  rA=f rB=f srcA=f srcB=f Stat=2 }                                     |
+| register eM(N) { icode=0 ifun=0 dstM=f dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000000 valP=0000000000000013    |
+|  valE=0000000000000000 Cnd=0 srcA=f srcB=f Stat=2 }                   |
+| register mW(N) { icode=0 ifun=0 dstM=f dstE=f valA=0000000000000000   |
+|  valB=0000000000000000 valC=0000000000000000 valE=0000000000000000    |
+|  valM=0000000000000000 Stat=2 }                                       |
+| register cC(S) { SF=0 ZF=1 }                                          |
+| used memory:   _0 _1 _2 _3  _4 _5 _6 _7   _8 _9 _a _b  _c _d _e _f    |
+|  0x0000000_:   30 f4 00 01  00 00 00 00   00 00 20 40  a0 4f b0 2f    |
+|  0x0000001_:   61 20 00                                               |
+|  0x000000f_:                              00 01 00 00  00 00 00 00    |
++--------------------- (end of halted state) ---------------------------+
+Cycles run: 11
